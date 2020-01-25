@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageUploadService } from '../services/image-upload.service';
 import { ImageUploadRequest } from '../models/Requests/ImageUploadRequest';
-import { Image } from '../models/Entities/image';
+import { Image } from '../models/Entities/Image';
 import {Router} from "@angular/router"
 import { CribsService } from '../services/cribs.service';
 
@@ -33,19 +33,25 @@ export class ImageUploadComponent implements OnInit {
         image.file = file;
         imageRequest.image = image;
 
-        reader.addEventListener('load', (event: any) => {
-            this.selectedFile = new ImageSnippet(event.target.result, file);
-            console.log('selected file');
-            console.log(this.selectedFile);
-            this.imageUploadService.uploadImage(imageRequest).subscribe(
-                res => {
-                    console.log(res);
-                },
-                err => {}
-            );
+        let uploadResponse$ = this.imageUploadService.uploadToBlob(image.file);
+
+        uploadResponse$.subscribe(res => {
+            console.log(res);
         });
 
-        reader.readAsArrayBuffer(file);
+        // reader.addEventListener('load', (event: any) => {
+        //     this.selectedFile = new ImageSnippet(event.target.result, file);
+        //     console.log('selected file');
+        //     console.log(this.selectedFile);
+        //     this.imageUploadService.uploadImage(imageRequest).subscribe(
+        //         res => {
+        //             console.log(res);
+        //         },
+        //         err => {}
+        //     );
+        // });
+
+        // reader.readAsArrayBuffer(file);
 
         this.cribService.getAllCribs()
        .subscribe((data) => {

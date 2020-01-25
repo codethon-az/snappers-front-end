@@ -25,9 +25,9 @@
     "AccountID": "1234",
     "UserProfile": {
         "UserName": "",
-        "FirstName":"",
-        "LastName": "",
-        "EmailAddress": "",
-        "Phone": ""
+        "FirstName":"Azure",
+        "LastName": "Snappers",
+        "EmailAddress": "codethon-az@outlook.com",
+        "Phone": "123-456-7890"
     }
 }
