@@ -43,8 +43,12 @@ export class ImageUploadComponent implements OnInit {
                 this.cribService
                     .getAllCribs(this.uploadedImageUri)
                     .subscribe(data => {
-                        this.cribService.cribData = data;
-                        this.router.navigate(['/housedetails']);
+                        if (data.isHouse) {
+                            this.cribService.cribData = data;
+                            this.router.navigate(['/housedetails']);
+                        } else {
+                            this.router.navigate(['/propertynotfound']);
+                        }
                     });
             } else {
                 //handle error during uploadToBlob

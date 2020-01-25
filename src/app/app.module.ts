@@ -16,6 +16,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { CribsService } from './services/cribs.service';
 import { HttpModule } from '@angular/http';
 import { HouseDetailComponent } from './house-details/house-details.component';
+import { PropertyNotFoundComponent } from './property-not-found/property-not-found.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { HouseDetailComponent } from './house-details/house-details.component';
         LoginComponent,
         LoaderComponent,
         HouseDetailComponent,
+        PropertyNotFoundComponent,
     ],
     imports: [
         BrowserModule,
