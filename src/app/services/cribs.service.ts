@@ -4,19 +4,11 @@ import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class CribsService {
+    cribData: any;
 
-  cribData: any;
+    constructor(private http: HttpClient) {}
 
-
-  constructor(private http: HttpClient) { }
-
-
-  getAllCribs() {
-    
-    return this.http.get('src/res.json')
-   
-  }
-
-
- 
+    getAllCribs() {
+        return this.http.get('../../src/res.json');
+    }
 }
