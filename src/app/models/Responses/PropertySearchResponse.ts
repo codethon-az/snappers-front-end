@@ -1,5 +1,5 @@
 import { QuoteDetails } from '../Entities/QuoteDetails';
-import { NeighborhoodDetails } from '../Entities/NeighborHoodDetails';
+import { NeighborhoodDetails } from '../Entities/NeighborhoodDetails';
 import { User } from '../Entities/User';
 
 export class PropertySearchResponse {

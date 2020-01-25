@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { ImageUploadResponse } from '../models/Responses/ImageUploadResponse';
 import { ImageUploadRequest } from '../models/Requests/ImageUploadRequest';
 import { UPLOADIMAGEAPI } from '../constants';
 import { API_UPLOADTOBLOB } from '../constants';
@@ -16,7 +15,7 @@ export class ImageUploadService {
     uploadToBlob(image: File) {
         console.log(image);
         let formData = new FormData();
-        
+
         formData.append('image', image, image.name);
         return this.http.post(API_UPLOADTOBLOB, formData);
     }
@@ -27,7 +26,6 @@ export class ImageUploadService {
         });
     }
 }
-
 
 //     uploadImage(imageRequest: ImageUploadRequest): Observable<any> {
 //         const httpOptions = {
