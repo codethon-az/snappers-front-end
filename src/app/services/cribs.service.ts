@@ -13,7 +13,7 @@ export class CribsService {
 
   getAllCribs() {
     
-    return this.http.get('../src/res.json')
+    return this.http.get('src/res.json')
     .map(res => res.json());
   }
 
