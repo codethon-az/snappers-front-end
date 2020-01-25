@@ -22,7 +22,7 @@ export class LoaderInterceptor implements HttpInterceptor {
                 setTimeout(() => {
                     console.log('Loadingz...');
                     this.loaderService.hide();
-                }, 3000);
+                }, 5000);
             })
         );
     }

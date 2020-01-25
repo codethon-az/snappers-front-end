@@ -3,9 +3,10 @@
 }
 
 .not-found {
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -16,12 +17,12 @@
 }
 .msg {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
 .try-again {
-    font-size: 18rem;
+    font-size: 7.2rem;
     margin: 0 auto;
     display: box;
 }
