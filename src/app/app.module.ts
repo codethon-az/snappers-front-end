@@ -13,8 +13,6 @@ import { ImageUploadService } from './services/image-upload.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
-import { CribListingComponent } from './crib-listing/crib-listing.component';
-import { CribCardComponent } from './crib-card/crib-card.component';
 import { CribsService } from './services/cribs.service';
 import { HttpModule } from '@angular/http';
 import { HouseDetailComponent } from './house-details/house-details.component';
@@ -26,8 +24,6 @@ import { HouseDetailComponent } from './house-details/house-details.component';
         ImageUploadComponent,
         LoginComponent,
         LoaderComponent,
-        CribListingComponent,
-        CribCardComponent,
         HouseDetailComponent,
     ],
     imports: [

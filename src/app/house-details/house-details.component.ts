@@ -1,7 +1,6 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 import { CribsService } from './../services/cribs.service';
-import { Crib } from '../crib';
 
 @Component({
   selector: 'house-details',
