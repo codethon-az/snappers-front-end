@@ -1,5 +1,8 @@
 # Notes
 
+augmented_realtors@outlook.com
+@ugm3ntedRealt0rs
+
 ## Bootstrap
 
 -   include jquery, popper cdns
