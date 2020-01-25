@@ -6,7 +6,7 @@ import { PropertySearchResponse } from '../models/Responses/PropertySearchRespon
 import { API_PROPERTYSEARCH } from '../constants';
 @Injectable()
 export class CribsService {
-    cribData: any;
+    cribData: PropertySearchResponse;
 
     constructor(private http: HttpClient) {}
 

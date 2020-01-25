@@ -1,0 +1,36 @@
+{
+    "isHouse": true,
+    "propertyFound": false,
+    "quoteFound": true,
+    "propertyList": [
+        {
+            "zip": "07722",
+            "propertyId": "1",
+            "imageUrl": "https://azsnappersblob.blob.core.windows.net/images/07722-01.01.PNG",
+            "address": "1 Locust Pl, Colts Neck, NJ 07722",
+            "area": "4539",
+            "numberOfBedrooms": 3,
+            "numberOfBathrooms": 2,
+            "cost": "1295375",
+            "status": "For Sale",
+            "tax": "13442",
+            "quoteDetails": null,
+            "neighborhoodDetails": null
+        }
+    ],
+    "accountNumber": null,
+    "user": {
+        "UserId": "1000000",
+        "Username": "Princess",
+        "Password": null,
+        "FirstName": "Charles",
+        "LastName": "Ball",
+        "MiddleName": "",
+        "CreditScore": 10,
+        "AUM": 2000076,
+        "RelationshipAge": 18,
+        "Phone": "(641) 375-8711",
+        "EmailAddress": "kimvette@live.com",
+        "AccountNumber": "742202"
+    }
+}

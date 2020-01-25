@@ -4,21 +4,23 @@ import { User } from '../Entities/User';
 
 export class PropertySearchResponse {
     isHouse: boolean;
+    propertyFound: boolean;
+    quoteFound: boolean;
     propertyList: [
         {
+            zip: number;
+            propertyId: number;
             imageUrl: string;
-            zipCode: number;
             address: string;
             area: string;
-            constructedIn: Date;
-            ageInYears: number;
             numberOfBedrooms: number;
             numberOfBathrooms: number;
             cost: number;
+            status: string;
+            tax: number;
             quoteDetails: QuoteDetails;
             neighborhoodDetails: NeighborhoodDetails;
         }
     ];
-    accountNumber: string;
     user: User;
 }
