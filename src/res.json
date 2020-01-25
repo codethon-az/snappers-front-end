@@ -1,0 +1,33 @@
+{
+    "IsHouse": true,
+    "houseList": [
+        {
+            
+            "Address": "23 Cottage way, Fanwood, NJ 07023",
+            "Area": "2000 Sqft",           
+            "AgeInYears": 10,
+            "NumberOfBedrooms": 4,
+            "NumberOfBathrooms": 3,
+            "Cost": 500000.0,
+            "ImageUrl": "https://azsnappersblob.blob.core.windows.net/images/07722-01.01.PNG",
+            "quoteDetails": {              
+                "IsPreApproved": true,
+                "RateofInterest": "2.40",
+                "DownPayment": "200000",
+                "MonthlyPayment": "2000"
+            },
+            "NeighbourhoodDetails": {
+                "CrimeIndex": 2.5,
+                "NearestSchool":3.0
+            }
+        }
+    ],
+    "AccountID": "1234",
+    "UserProfile": {
+        "UserName": "",
+        "FirstName":"Azure",
+        "LastName": "Snappers",
+        "EmailAddress": "codethon-az@outlook.com",
+        "Phone": "123-456-7890"
+    }
+}
