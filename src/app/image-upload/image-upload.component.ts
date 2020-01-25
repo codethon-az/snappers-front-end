@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ImageUploadService } from '../services/image-upload.service';
 import { ImageUploadRequest } from '../models/Requests/ImageUploadRequest';
 import { Image } from '../models/Entities/Image';
-import {Router} from "@angular/router"
+import { Router } from '@angular/router';
 import { CribsService } from '../services/cribs.service';
 
-class ImageSnippet {
-    constructor(public src: string, public file: File) {}
-}
+// class ImageSnippet {
+//     constructor(public src: string, public file: File) {}
+// }
 
 @Component({
     selector: 'app-image-upload',
@@ -15,9 +15,16 @@ class ImageSnippet {
     styleUrls: ['./image-upload.component.scss'],
 })
 export class ImageUploadComponent implements OnInit {
-    constructor(private imageUploadService: ImageUploadService,private cribService: CribsService,private router: Router) {}
+    constructor(
+        private imageUploadService: ImageUploadService,
+        private cribService: CribsService,
+        private router: Router
+    ) {}
 
-    selectedFile: ImageSnippet;
+    //selectedFile: ImageSnippet;
+
+    uploadedImageUri: string;
+
     ngOnInit() {}
 
     callApi() {
@@ -26,19 +33,26 @@ export class ImageUploadComponent implements OnInit {
 
     uploadFile($event) {
         let file = $event.target.files[0];
-        const reader = new FileReader();
 
-        let imageRequest = new ImageUploadRequest();
-        let image = new Image();
-        image.file = file;
-        imageRequest.image = image;
-
-        let uploadResponse$ = this.imageUploadService.uploadToBlob(image.file);
+        let uploadResponse$ = this.imageUploadService.uploadToBlob(file);
 
         uploadResponse$.subscribe(res => {
             console.log(res);
+            if (res.status === 'success') {
+                this.uploadedImageUri = res.imageUri;
+                this.cribService
+                    .getAllCribs(this.uploadedImageUri)
+                    .subscribe(data => {
+                        this.cribService.cribData = data;
+                        this.router.navigate(['/housedetails']);
+                    });
+            } else {
+                //handle error during uploadToBlob
+            }
         });
 
+        //const reader = new FileReader();
+        //let imageRequest = new ImageUploadRequest();
         // reader.addEventListener('load', (event: any) => {
         //     this.selectedFile = new ImageSnippet(event.target.result, file);
         //     console.log('selected file');
@@ -53,15 +67,6 @@ export class ImageUploadComponent implements OnInit {
 
         // reader.readAsArrayBuffer(file);
 
-        this.cribService.getAllCribs()
-       .subscribe((data) => {
-           this.cribService.cribData = data;
-           this.router.navigate(['/housedetails']);
-       }
-        );
-       
-
-      
         // console.log($event);
         // console.log(file);
         // let imageRequest = new ImageUploadRequest();
@@ -70,6 +75,5 @@ export class ImageUploadComponent implements OnInit {
         // imageRequest.image = image;
         // let imageResponse = this.imageUploadService.uploadImage(imageRequest);
         // imageResponse.subscribe(x => console.log(x));
-
     }
 }
