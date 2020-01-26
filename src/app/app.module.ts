@@ -17,6 +17,10 @@ import { CribsService } from './services/cribs.service';
 import { HttpModule } from '@angular/http';
 import { HouseDetailComponent } from './house-details/house-details.component';
 import { PropertyNotFoundComponent } from './property-not-found/property-not-found.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MessageListComponent } from './chatbot/message-list/message-list.component';
+import { MessageItemComponent } from './chatbot/message-item/message-item.component';
+import { MessageFormComponent } from './chatbot/message-form/message-form.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +31,10 @@ import { PropertyNotFoundComponent } from './property-not-found/property-not-fou
         LoaderComponent,
         HouseDetailComponent,
         PropertyNotFoundComponent,
+        ChatbotComponent,
+        MessageListComponent,
+        MessageItemComponent,
+        MessageFormComponent,
     ],
     imports: [
         BrowserModule,
