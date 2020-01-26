@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from 'src/app/models/Entities/message';
+import { Message } from 'src/app/models/Entities/Message';
 import { MessageService } from 'src/app/services/message.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class MessageFormComponent implements OnInit {
     @Input('message')
-    private message: Message;
+    message: Message;
 
     @Input('messages')
-    private messages: Message[];
+    messages: Message[];
 
     constructor(private messageService: MessageService) {}
 

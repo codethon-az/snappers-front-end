@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { Message } from 'src/app/models/Entities/Message';
 
 @Component({
     selector: 'app-message-item',
@@ -8,7 +8,7 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 })
 export class MessageItemComponent implements OnInit {
     @Input('message')
-    private message: Message;
+    message: Message;
 
     constructor() {}
 
