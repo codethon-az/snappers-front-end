@@ -252,13 +252,39 @@
                     <form action="#">
                         <div class="row">
                             <div class="col-xl-6 col-md-6">
-                                <input type="text" placeholder="Your Name" />
+                                <input
+                                    type="text"
+                                    placeholder="Your Name"
+                                    [value]="
+                                        houseDetails.propertyList[0].user
+                                            .firstName +
+                                        ' ' +
+                                        houseDetails.propertyList[0].user
+                                            .middleName +
+                                        ' ' +
+                                        houseDetails.propertyList[0].user
+                                            .lastName
+                                    "
+                                />
                             </div>
                             <div class="col-xl-6 col-md-6">
-                                <input type="email" placeholder="Email" />
+                                <input
+                                    type="email"
+                                    placeholder="Email"
+                                    [value]="
+                                        houseDetails.propertyList[0].user
+                                            .emailAddress
+                                    "
+                                />
                             </div>
                             <div class="col-xl-12">
-                                <input type="number" placeholder="Phone no." />
+                                <input
+                                    type="number"
+                                    placeholder="Phone no."
+                                    [value]="
+                                        houseDetails.propertyList[0].user.phone
+                                    "
+                                />
                             </div>
                             <div class="col-xl-12">
                                 <textarea
