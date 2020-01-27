@@ -8,4 +8,4 @@ export const API_CHATBOT = 'https://sillybee.azurewebsites.net/api/sillybee';
 //'https://az-snappers-orchestrator.azurewebsites.net/api/Property/princess?image=https://specials-images.forbesimg.com/imageserve/1026205392/960x0.jpg';
 
 export const IMG_USER = 'assets/images/user.png';
-export const IMG_BOT = 'assets/images/bot.png';
+export const IMG_BOT = 'assets/images/bee.jpg';
