@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Message } from 'src/app/models/Entities/Message';
 import { MessageService } from 'src/app/services/message.service';
+import { IMG_BOT } from 'src/app/constants';
 
 @Component({
     selector: 'app-message-form',
@@ -24,7 +25,7 @@ export class MessageFormComponent implements OnInit {
     public sendMessage(): void {
         this.question = this.messages[this.messages.length - 1].content;
         this.message.timestamp = new Date();
-        //this.messages.push(this.message);
+        this.messages.push(this.message);
         this.message = new Message(
             this.message.content,
             'assets/images/user.png'
@@ -35,7 +36,12 @@ export class MessageFormComponent implements OnInit {
             this.userResponse
         );
 
-        messageObs$.subscribe(res => console.log(res));
+        messageObs$.subscribe(res => {
+            let botResponse = new Message(res.command, IMG_BOT, new Date());
+            this.messages.push(botResponse);
+            console.log(res);
+            console.log(botResponse);
+        });
         //this.messages.push(this.messageService.sendMessage(this.message));
     }
 }

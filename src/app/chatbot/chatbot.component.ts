@@ -13,7 +13,7 @@ export class ChatbotComponent implements OnInit {
         this.message = new Message('', 'assets/images/user.png');
         this.messages = [
             new Message(
-                'Do you like this property?',
+                'Do you like the house?',
                 'assets/images/bot.png',
                 new Date()
             ),
