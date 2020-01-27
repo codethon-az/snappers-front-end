@@ -14,17 +14,28 @@ export class MessageFormComponent implements OnInit {
     @Input('messages')
     messages: Message[];
 
+    question: string;
+    userResponse: string;
+
     constructor(private messageService: MessageService) {}
 
     ngOnInit() {}
 
     public sendMessage(): void {
+        this.question = this.messages[this.messages.length - 1].content;
         this.message.timestamp = new Date();
-        this.messages.push(this.message);
+        //this.messages.push(this.message);
         this.message = new Message(
             this.message.content,
             'assets/images/user.png'
         );
-        this.messages.push(this.messageService.sendMessage(this.message));
+        this.userResponse = this.message.content;
+        let messageObs$ = this.messageService.sendMessage(
+            this.question,
+            this.userResponse
+        );
+
+        messageObs$.subscribe(res => console.log(res));
+        //this.messages.push(this.messageService.sendMessage(this.message));
     }
 }

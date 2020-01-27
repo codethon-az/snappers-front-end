@@ -39,19 +39,19 @@ export class ImageUploadComponent implements OnInit {
         uploadResponse$.subscribe(res => {
             console.log(res);
             if (res.status === 'success') {
-                setTimeout(() => {
-                    this.uploadedImageUri = res.imageUri;
-                    this.cribService
-                        .getAllCribs(this.uploadedImageUri)
-                        .subscribe(data => {
-                            if (data.isHouse) {
-                                this.cribService.cribData = data;
-                                this.router.navigate(['/housedetails']);
-                            } else {
-                                this.router.navigate(['/propertynotfound']);
-                            }
-                        });
-                }, 3000);
+                //setTimeout(() => {
+                this.uploadedImageUri = res.imageUri;
+                this.cribService
+                    .getAllCribs(this.uploadedImageUri)
+                    .subscribe(data => {
+                        if (data.isHouse) {
+                            this.cribService.cribData = data;
+                            this.router.navigate(['/housedetails']);
+                        } else {
+                            this.router.navigate(['/propertynotfound']);
+                        }
+                    });
+                //}, 3000);
             } else {
                 //handle error during uploadToBlob
             }

@@ -1,10 +1,19 @@
 .chatbot {
-    margin-right: 10%;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     width: 400px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 1;
+    background-color: #edf7fa;
 }
 
+#chatPopUp {
+    z-index: 999999;
+}
 .chat-icon {
     font-size: 3.6rem;
     color: #fdae5c;
