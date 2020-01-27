@@ -3,7 +3,7 @@
         type="text"
         class="form-control chatinput"
         [(ngModel)]="message.content"
-        (keyup.enter)="sendMessage($event)"
+        (keyup.enter)="sendMessage()"
     />
     <button class="btn btn-success sendbtn" (click)="sendMessage()">
         Send
