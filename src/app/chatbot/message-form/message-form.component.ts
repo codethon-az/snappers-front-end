@@ -36,6 +36,8 @@ export class MessageFormComponent implements OnInit {
             this.userResponse
         );
 
+        //resetting text box
+        this.message.content = '';
         messageObs$.subscribe(res => {
             let botResponse = new Message(res.command, IMG_BOT, new Date());
             this.messages.push(botResponse);
