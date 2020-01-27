@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ImageUploadService } from '../services/image-upload.service';
 import { ImageUploadRequest } from '../models/Requests/ImageUploadRequest';
 import { Image } from '../models/Entities/Image';
 import { Router } from '@angular/router';
 import { CribsService } from '../services/cribs.service';
+import { Subscription } from 'rxjs';
 
 // class ImageSnippet {
 //     constructor(public src: string, public file: File) {}
@@ -14,7 +15,7 @@ import { CribsService } from '../services/cribs.service';
     templateUrl: './image-upload.component.html',
     styleUrls: ['./image-upload.component.scss'],
 })
-export class ImageUploadComponent implements OnInit {
+export class ImageUploadComponent implements OnInit, OnDestroy {
     constructor(
         private imageUploadService: ImageUploadService,
         private cribService: CribsService,
@@ -24,6 +25,7 @@ export class ImageUploadComponent implements OnInit {
     //selectedFile: ImageSnippet;
 
     uploadedImageUri: string;
+    subscription: Subscription;
 
     ngOnInit() {}
 
@@ -36,7 +38,7 @@ export class ImageUploadComponent implements OnInit {
 
         let uploadResponse$ = this.imageUploadService.uploadToBlob(file);
 
-        uploadResponse$.subscribe(res => {
+        this.subscription = uploadResponse$.subscribe(res => {
             console.log(res);
             if (res.status === 'success') {
                 //setTimeout(() => {
@@ -83,5 +85,9 @@ export class ImageUploadComponent implements OnInit {
         // imageRequest.image = image;
         // let imageResponse = this.imageUploadService.uploadImage(imageRequest);
         // imageResponse.subscribe(x => console.log(x));
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }
