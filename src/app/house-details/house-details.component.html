@@ -256,14 +256,11 @@
                                     type="text"
                                     placeholder="Your Name"
                                     [value]="
-                                        houseDetails.propertyList[0].user
-                                            .firstName +
+                                        houseDetails.user.firstName +
                                         ' ' +
-                                        houseDetails.propertyList[0].user
-                                            .middleName +
+                                        houseDetails.user.middleName +
                                         ' ' +
-                                        houseDetails.propertyList[0].user
-                                            .lastName
+                                        houseDetails.user.lastName
                                     "
                                 />
                             </div>
@@ -271,19 +268,14 @@
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    [value]="
-                                        houseDetails.propertyList[0].user
-                                            .emailAddress
-                                    "
+                                    [value]="houseDetails.user.emailAddress"
                                 />
                             </div>
                             <div class="col-xl-12">
                                 <input
                                     type="number"
                                     placeholder="Phone no."
-                                    [value]="
-                                        houseDetails.propertyList[0].user.phone
-                                    "
+                                    [value]="houseDetails.user.phone"
                                 />
                             </div>
                             <div class="col-xl-12">
