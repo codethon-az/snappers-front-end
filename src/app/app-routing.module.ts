@@ -4,9 +4,11 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { HouseDetailComponent } from './house-details/house-details.component';
 import { PropertyNotFoundComponent } from './property-not-found/property-not-found.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MapItComponent } from './map-it/map-it.component';
 
 const routes: Routes = [
     { path: 'uploadimage', component: ImageUploadComponent },
+    { path: 'map-it', component: MapItComponent },
     { path: 'housedetails', component: HouseDetailComponent },
     { path: 'propertynotfound', component: PropertyNotFoundComponent },
     { path: 'chatbot', component: ChatbotComponent },
@@ -17,4 +19,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

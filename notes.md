@@ -35,3 +35,10 @@ Blob
 azsnappersblob
 key=TEq9kqTg1RhpnDpZppJ0CxBsOXbSzEOofi6r5qRgYojQu9WOsQkTle7floM2qZKOYwNP43gpkKVfI7NGt1V2yg==
 connectionString=DefaultEndpointsProtocol=https;AccountName=azsnappersblob;AccountKey=TEq9kqTg1RhpnDpZppJ0CxBsOXbSzEOofi6r5qRgYojQu9WOsQkTle7floM2qZKOYwNP43gpkKVfI7NGt1V2yg==;EndpointSuffix=core.windows.net
+
+Azuremaps
+
+Client ID
+1840b83f-28a1-4c9e-bb97-8b2864e9dd07
+Pkey
+_iE98wMyxMH5x0BLJkcFDAGRPLP94M34uMktJOqIJno

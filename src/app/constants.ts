@@ -9,3 +9,4 @@ export const API_CHATBOT = 'https://sillybee.azurewebsites.net/api/sillybee';
 
 export const IMG_USER = 'assets/images/user.png';
 export const IMG_BOT = 'assets/images/bot.png';
+

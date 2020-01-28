@@ -21,6 +21,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { MessageListComponent } from './chatbot/message-list/message-list.component';
 import { MessageItemComponent } from './chatbot/message-item/message-item.component';
 import { MessageFormComponent } from './chatbot/message-form/message-form.component';
+import { MapItComponent } from './map-it/map-it.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { MessageFormComponent } from './chatbot/message-form/message-form.compon
         MessageListComponent,
         MessageItemComponent,
         MessageFormComponent,
+        MapItComponent,
     ],
     imports: [
         BrowserModule,
